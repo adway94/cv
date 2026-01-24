@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CV Digital Profesional - Desarrollador Full Stack">
+  <meta name="keywords" content="desarrollador, full stack, CV, portfolio, programador">
+  <meta name="author" content="Tu Nombre">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tu Nombre - CV Digital">
+  <meta property="og:description" content="Desarrollador Full Stack con experiencia en JavaScript, React y Node.js">
+  <meta property="og:image" content="assets/images/profile.jpg">
+
+  <title>Tu Nombre - CV Digital</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#home" class="nav-logo">TN</a>
+
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link active">Inicio</a></li>
+        <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+        <li><a href="#experience" class="nav-link">Experiencia</a></li>
+        <li><a href="#achievements" class="nav-link">Logros</a></li>
+        <li><a href="#challenges" class="nav-link">Desafíos</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#skills" class="nav-link">Habilidades</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img src="assets/images/profile.jpg" alt="Profile Photo" class="hero-image" onerror="this.src='https://via.placeholder.com/180'">
+      <h1 class="hero-title">Tu Nombre</h1>
+      <p class="hero-subtitle">Desarrollador Full Stack</p>
+      <p class="hero-description">
+        Desarrollador apasionado con +5 años de experiencia creando soluciones web innovadoras.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">
+          <i class="fas fa-envelope"></i>
+          Contáctame
+        </a>
+        <a href="assets/cv.pdf" target="_blank" class="btn btn-outline" onclick="downloadCV(); return false;">
+          <i class="fas fa-download"></i>
+          Descargar CV
+        </a>
+      </div>
+      <div class="hero-social">
+        <div class="social-links">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <h2 class="section-title">Sobre Mí</h2>
+      <p class="section-subtitle">Conoce un poco más sobre mi trayectoria profesional</p>
+      <div class="about-content">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <h2 class="section-title">Experiencia Laboral</h2>
+      <p class="section-subtitle">Mi trayectoria profesional y roles anteriores</p>
+      <div class="experience-list">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="section achievements" id="achievements">
+    <div class="container">
+      <h2 class="section-title">Logros Destacados</h2>
+      <p class="section-subtitle">Hitos importantes en mi carrera profesional</p>
+      <div class="grid grid-3">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges Section -->
+  <section class="section challenges" id="challenges">
+    <div class="container">
+      <h2 class="section-title">Desafíos & Soluciones</h2>
+      <p class="section-subtitle">Casos de éxito y lecciones aprendidas</p>
+      <div class="grid grid-2">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-subtitle">Algunos de mis trabajos más destacados</p>
+      <div class="grid grid-3">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Habilidades Técnicas</h2>
+      <p class="section-subtitle">Tecnologías y herramientas que domino</p>
+      <div class="skills-grid">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section education" id="education">
+    <div class="container">
+      <h2 class="section-title">Educación</h2>
+      <p class="section-subtitle">Formación académica y bootcamps</p>
+      <div class="education-list">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="section certifications" id="certifications">
+    <div class="container">
+      <h2 class="section-title">Certificaciones</h2>
+      <p class="section-subtitle">Certificaciones profesionales obtenidas</p>
+      <div class="grid grid-3">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages Section -->
+  <section class="section languages" id="languages">
+    <div class="container">
+      <h2 class="section-title">Idiomas</h2>
+      <p class="section-subtitle">Niveles de competencia lingüística</p>
+      <div class="grid grid-3">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span class="contact-email">tu.email@ejemplo.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span class="contact-phone">+34 123 456 789</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="contact-location">Madrid, España</span>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <div class="social-links">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
+      <p>Desarrollado con <i class="fas fa-heart" style="color: #ef4444;"></i> usando HTML, CSS y JavaScript</p>
+      <div class="footer-links">
+        <a href="#home" class="footer-link">Inicio</a>
+        <a href="#about" class="footer-link">Sobre Mí</a>
+        <a href="#projects" class="footer-link">Proyectos</a>
+        <a href="#contact" class="footer-link">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
