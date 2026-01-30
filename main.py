@@ -3,19 +3,36 @@ FastAPI Backend - CV Digital
 Monolithic application serving static files and API endpoints
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 import os
+from starlette.middleware.base import BaseHTTPMiddleware
 
 # Initialize FastAPI app
 app = FastAPI(
     title="CV Digital API",
     description="Backend API for digital CV website",
-    version="1.0.0"
+    version="1.0.0",
+    docs_url=None,  # Desactiva /docs
+    redoc_url=None  # Desactiva /redoc
 )
+
+# No-Cache Middleware for development
+class NoCacheMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        response = await call_next(request)
+        # Only apply no-cache to JS and CSS files
+        if request.url.path.endswith(('.js', '.css')):
+            response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+            response.headers["Pragma"] = "no-cache"
+            response.headers["Expires"] = "0"
+        return response
+
+# Add middlewares
+app.add_middleware(NoCacheMiddleware)
 
 # CORS middleware
 app.add_middleware(
@@ -132,11 +149,16 @@ async def serve_static_files(file_path: str):
 @app.on_event("startup")
 async def startup_event():
     """Run on application startup"""
+    port = os.getenv("PORT", "8000")
+    host = os.getenv("HOST", "0.0.0.0")
+
+    # Mostrar URL accesible
+    display_host = "localhost" if host == "0.0.0.0" else host
+
     print("=" * 50)
     print("🚀 CV Digital Backend Started")
     print("=" * 50)
-    print("📝 API Docs: http://localhost:8000/docs")
-    print("🌐 Frontend: http://localhost:8000")
+    print(f"🌐 Frontend: http://{display_host}:{port}")
     print("=" * 50)
 
 

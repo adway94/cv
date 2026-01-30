@@ -113,9 +113,18 @@
 
 .hero-subtitle {
   font-size: var(--fs-2xl);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-sm);
   font-weight: var(--fw-medium);
   opacity: 0.95;
+}
+
+.hero-tagline {
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-2xl);
+  opacity: 0.85;
+  font-weight: var(--fw-normal);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-description {
@@ -587,4 +596,21 @@
   .section {
     page-break-inside: avoid;
   }
+}
+
+/* ============================================
+   Certifications Toggle (Show More/Less)
+   ============================================ */
+
+.certifications-grid .card.hidden {
+  display: none;
+}
+
+.toggle-icon {
+  margin-left: var(--space-sm);
+  transition: transform var(--transition-base);
+}
+
+.toggle-icon.rotated {
+  transform: rotate(180deg);
 }

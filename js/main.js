@@ -146,10 +146,14 @@ const populateContent = () => {
 const populatePersonalInfo = () => {
   const { personal } = cvData;
 
-  // Update hero section
+  // Update hero section - nombre, título y tagline
   document.querySelector('.hero-title').textContent = personal.name;
   document.querySelector('.hero-subtitle').textContent = personal.title;
-  document.querySelector('.hero-description').textContent = personal.bio;
+
+  const heroTagline = document.querySelector('.hero-tagline');
+  if (heroTagline && personal.tagline) {
+    heroTagline.textContent = personal.tagline;
+  }
 
   const heroImage = document.querySelector('.hero-image');
   if (heroImage && personal.image) {
@@ -157,16 +161,20 @@ const populatePersonalInfo = () => {
     heroImage.alt = personal.name;
   }
 
-  // Update about section
+  // Update about section - Bio completa aquí
   const aboutContent = document.querySelector('.about-content');
   if (aboutContent) {
     aboutContent.innerHTML = `<p>${personal.bio}</p>`;
   }
 
   // Update contact section
-  document.querySelector('.contact-email').textContent = personal.email;
-  document.querySelector('.contact-phone').textContent = personal.phone;
-  document.querySelector('.contact-location').textContent = personal.location;
+  const contactEmail = document.querySelector('.contact-email');
+  const contactPhone = document.querySelector('.contact-phone');
+  const contactLocation = document.querySelector('.contact-location');
+
+  if (contactEmail) contactEmail.textContent = personal.email || 'Contactar vía LinkedIn';
+  if (contactPhone) contactPhone.textContent = personal.phone || '';
+  if (contactLocation) contactLocation.textContent = personal.location;
 };
 
 // Social Links
@@ -350,21 +358,62 @@ const populateEducation = () => {
     '</div>';
 };
 
-// Certifications
+// Certifications (Show More/Less)
 const populateCertifications = () => {
   const { certifications } = cvData;
-  const certificationsGrid = document.querySelector('.certifications .grid');
+  const certificationsGrid = document.querySelector('.certifications-grid');
 
   if (!certificationsGrid) return;
 
-  certificationsGrid.innerHTML = certifications.map(cert => `
-    <div class="card certification-card">
+  // Populate certifications - hide items after index 2 (show only 3 most recent)
+  certificationsGrid.innerHTML = certifications.map((cert, index) => `
+    <div class="card certification-card ${index > 2 ? 'hidden' : ''}">
       <div class="certification-logo">${cert.logo}</div>
       <h3 class="card-title">${cert.name}</h3>
       <p class="card-subtitle">${cert.issuer}</p>
       <div class="badge badge-primary">${cert.date}</div>
     </div>
   `).join('');
+
+  // Initialize toggle button after a short delay to ensure DOM is ready
+  setTimeout(initCertificationsToggle, 100);
+};
+
+// Toggle certifications visibility
+const initCertificationsToggle = () => {
+  const toggleBtn = document.getElementById('toggleCertifications');
+
+  if (!toggleBtn) {
+    console.warn('Toggle button not found');
+    return;
+  }
+
+  const toggleText = toggleBtn.querySelector('.toggle-text');
+  const toggleIcon = toggleBtn.querySelector('.toggle-icon');
+
+  // Remove previous listeners if any
+  const newToggleBtn = toggleBtn.cloneNode(true);
+  toggleBtn.parentNode.replaceChild(newToggleBtn, toggleBtn);
+
+  newToggleBtn.addEventListener('click', () => {
+    const hiddenCards = document.querySelectorAll('.certifications-grid .card.hidden');
+    const isExpanded = hiddenCards.length === 0;
+
+    if (isExpanded) {
+      // Collapse - hide all except first 3
+      const allCards = document.querySelectorAll('.certifications-grid .card');
+      allCards.forEach((card, index) => {
+        if (index > 2) card.classList.add('hidden');
+      });
+      newToggleBtn.querySelector('.toggle-text').textContent = 'Ver más';
+      newToggleBtn.querySelector('.toggle-icon').classList.remove('rotated');
+    } else {
+      // Expand - show all
+      hiddenCards.forEach(card => card.classList.remove('hidden'));
+      newToggleBtn.querySelector('.toggle-text').textContent = 'Ver menos';
+      newToggleBtn.querySelector('.toggle-icon').classList.add('rotated');
+    }
+  });
 };
 
 // Languages

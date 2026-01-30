@@ -5,62 +5,102 @@
 const cvData = {
   // Personal Information
   personal: {
-    name: "Tu Nombre",
-    title: "Desarrollador Full Stack",
-    email: "tu.email@ejemplo.com",
-    phone: "+34 123 456 789",
-    location: "Madrid, España",
+    name: "Alejandro Machulsky",
+    title: "Software Developer",
+    tagline: "Transformando ideas en soluciones reales | Ingeniería + IA + Resultados medibles",
+    email: "", // Contact via social links
+    phone: "",
+    location: "Argentina",
     image: "assets/images/profile.jpg", // Add your photo here
-    bio: "Desarrollador apasionado con +5 años de experiencia creando soluciones web innovadoras. Especializado en JavaScript, React y Node.js. Me encanta resolver problemas complejos y aprender nuevas tecnologías.",
+    bio: "¡Hola! Soy Alejandro, un desarrollador con una perspectiva única que combina ingeniería informática, marketing y desarrollo web autodidacta. Esta convergencia de disciplinas me permite no solo escribir código eficiente, sino entender el 'por qué' detrás de cada proyecto: las necesidades del usuario, los objetivos de negocio y el impacto real del producto. Mi capacidad de adaptación y visión integral me han permitido integrarme rápidamente en equipos diversos, aportando soluciones que equilibran excelencia técnica con valor para el cliente. Creo firmemente que la mejor tecnología es aquella que resuelve problemas reales de forma elegante.",
   },
 
   // Social Links
   social: {
-    linkedin: "https://linkedin.com/in/tu-perfil",
-    github: "https://github.com/tu-usuario",
-    twitter: "https://twitter.com/tu-usuario",
-    portfolio: "https://tu-portfolio.com",
+    linkedin: "https://www.linkedin.com/in/alejandro-machulsky/",
+    github: "https://github.com/adway94",
+    twitter: "",
+    portfolio: "",
   },
 
   // Work Experience
   experience: [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Company SA",
-      location: "Madrid, España",
-      startDate: "Ene 2022",
-      endDate: "Presente",
-      description: "Desarrollo de aplicaciones web escalables usando React, Node.js y MongoDB. Liderazgo de equipo de 3 desarrolladores junior.",
+      title: "Fullstack Developer",
+      company: "Empresa Confidencial",
+      location: "Argentina",
+      startDate: "Jul 2021",
+      endDate: "Actualidad",
+      description: "*Nombre de la empresa protegido por acuerdo de confidencialidad. Desarrollo fullstack con Python (Django) + React, trabajando en arquitectura de microservicios con Docker en entorno de jornada completa.",
       achievements: [
-        "Implementé arquitectura de microservicios que mejoró el rendimiento en 40%",
-        "Reduje el tiempo de carga de la aplicación de 5s a 1.5s",
-        "Mentoría de 3 desarrolladores junior"
+        "Diseño e implementación de soluciones escalables con Django y React",
+        "Gestión de infraestructura containerizada con Docker",
+        "Desarrollo de APIs RESTful y optimización de base de datos"
       ]
     },
     {
-      title: "Full Stack Developer",
-      company: "StartUp Innovadora",
-      location: "Barcelona, España",
-      startDate: "Mar 2020",
-      endDate: "Dic 2021",
-      description: "Desarrollo de MVP y features para plataforma SaaS. Stack: React, Express, PostgreSQL.",
+      title: "Fullstack Developer",
+      company: "Devsar",
+      location: "Argentina",
+      startDate: "May 2021",
+      endDate: "Jul 2021",
+      description: "Desarrollo fullstack con Python (Django) + React en jornada completa. Implementación de soluciones web con Docker.",
       achievements: [
-        "Desarrollé 15+ features desde cero",
-        "Implementé sistema de autenticación con OAuth2",
-        "Mejoré cobertura de tests del 30% al 80%"
+        "Desarrollo de aplicaciones web con Django y React",
+        "Implementación de contenedores Docker para desarrollo y deploy",
+        "Colaboración en equipo ágil con metodología Scrum"
       ]
     },
     {
-      title: "Junior Developer",
-      company: "Agencia Digital XYZ",
-      location: "Valencia, España",
-      startDate: "Jun 2018",
-      endDate: "Feb 2020",
-      description: "Desarrollo de sitios web corporativos y e-commerce. HTML, CSS, JavaScript, WordPress.",
+      title: "Aceleración Alkemy",
+      company: "Alkemy",
+      location: "Argentina",
+      startDate: "Feb 2021",
+      endDate: "May 2021",
+      description: "Programa intensivo de formación en tecnologías Node.js, Django y React. Desarrollo de proyectos prácticos aplicando metodologías ágiles.",
       achievements: [
-        "Completé 20+ proyectos de sitios web",
-        "Implementé diseños responsive para todos los clientes",
-        "Optimicé SEO aumentando tráfico orgánico en 50%"
+        "Dominio de tecnologías Node.js, Django y React",
+        "Desarrollo de proyectos completos end-to-end",
+        "Aplicación de buenas prácticas y patrones de diseño"
+      ]
+    },
+    {
+      title: "Ejecutivo de Ventas",
+      company: "Invictvs Juegos de Mesa y Rol",
+      location: "Paraná, Entre Ríos",
+      startDate: "Mar 2018",
+      endDate: "Abr 2021",
+      description: "Gestión del área de distribución a tiendas, atención al cliente y estrategias comerciales.",
+      achievements: [
+        "Expansión de red de distribución regional",
+        "Implementación de sistemas de gestión de inventario",
+        "Desarrollo de estrategias de fidelización de clientes"
+      ]
+    },
+    {
+      title: "Cobrador de Créditos",
+      company: "Suvillan SA",
+      location: "Paraná, Entre Ríos",
+      startDate: "Jun 2016",
+      endDate: "Feb 2018",
+      description: "Gestión de cobranzas en moto vehículos de cuotas diarias, atención al cliente y administración de cartera.",
+      achievements: [
+        "Optimización de rutas de cobranza reduciendo tiempos en 30%",
+        "Mejora en tasa de recuperación de créditos",
+        "Manejo de relaciones cliente-empresa en situaciones complejas"
+      ]
+    },
+    {
+      title: "Empresario Independiente",
+      company: "Amway Global",
+      location: "Paraná, Entre Ríos",
+      startDate: "Feb 2014",
+      endDate: "Jun 2016",
+      description: "Emprendimiento independiente en distribución de productos y desarrollo de red comercial.",
+      achievements: [
+        "Construcción de red de distribución desde cero",
+        "Desarrollo de habilidades de negociación y liderazgo",
+        "Gestión autónoma de inventario y finanzas"
       ]
     }
   ],
@@ -183,50 +223,105 @@ const cvData = {
   // Education
   education: [
     {
-      degree: "Ingeniería en Informática",
-      institution: "Universidad Politécnica de Madrid",
-      location: "Madrid, España",
-      startDate: "2014",
-      endDate: "2018",
-      description: "Especialización en Desarrollo de Software y Bases de Datos"
+      degree: "Licenciatura en Marketing",
+      institution: "Universidad Autónoma de Entre Ríos",
+      location: "Paraná, Entre Ríos",
+      startDate: "2016",
+      endDate: "En progreso",
+      description: "Formación en gestión de marketing, estrategias comerciales y comportamiento del consumidor"
     },
     {
-      degree: "Master en Desarrollo Web Full Stack",
-      institution: "Escuela IT Online",
-      location: "Online",
-      startDate: "2019",
-      endDate: "2020",
-      description: "Bootcamp intensivo de 9 meses"
+      degree: "Ingeniería en Informática",
+      institution: "Universidad Nacional del Litoral",
+      location: "Santa Fe, Argentina",
+      startDate: "2013",
+      endDate: "2016",
+      description: "Formación en desarrollo de software, bases de datos y arquitectura de sistemas (no finalizada)"
+    },
+    {
+      degree: "Técnico en Marketing",
+      institution: "Universidad Autónoma de Entre Ríos",
+      location: "Paraná, Entre Ríos",
+      startDate: "2016",
+      endDate: "2019",
+      description: "Especialización en Marketing y Gestión de Marketing General"
     }
   ],
 
-  // Certifications
+  // Certifications - Ordenadas por antigüedad (más recientes primero)
   certifications: [
     {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      logo: "AWS"
+      name: "Diplomatura en Programación Web Full Stack con React JS",
+      issuer: "UTN Buenos Aires",
+      date: "Mar 2021",
+      logo: "🎓"
     },
     {
-      name: "Professional Scrum Master I",
-      issuer: "Scrum.org",
-      date: "2022",
-      logo: "PSM"
+      name: "Big Data: Procesamiento y Análisis",
+      issuer: "Coursera",
+      date: "Dic 2020",
+      logo: "📊"
     },
     {
-      name: "MongoDB Certified Developer",
-      issuer: "MongoDB University",
-      date: "2021",
-      logo: "MDB"
+      name: "Big Data: Visualización de Datos",
+      issuer: "Coursera",
+      date: "Dic 2020",
+      logo: "📈"
+    },
+    {
+      name: "Big Data: Adquisición y Almacenamiento de Datos",
+      issuer: "Coursera",
+      date: "Nov 2020",
+      logo: "💾"
+    },
+    {
+      name: "Big Data: El Impacto de los Datos Masivos en la Sociedad Actual",
+      issuer: "Coursera",
+      date: "Sep 2020",
+      logo: "🌐"
+    },
+    {
+      name: "CSS Fundamentals",
+      issuer: "SoloLearn",
+      date: "Ago 2020",
+      logo: "🎨"
+    },
+    {
+      name: "Data Science with Python",
+      issuer: "SoloLearn",
+      date: "Ago 2020",
+      logo: "🐍"
+    },
+    {
+      name: "SQL Fundamentals",
+      issuer: "SoloLearn",
+      date: "Jul 2020",
+      logo: "🗄️"
+    },
+    {
+      name: "HTML Fundamentals",
+      issuer: "SoloLearn",
+      date: "Abr 2020",
+      logo: "📄"
+    },
+    {
+      name: "Python 3 Tutorial",
+      issuer: "SoloLearn",
+      date: "Mar 2020",
+      logo: "🐍"
+    },
+    {
+      name: "Fundamentos de Marketing Digital",
+      issuer: "Google",
+      date: "Feb 2020",
+      logo: "🎯"
     }
   ],
 
   // Languages
   languages: [
     { name: "Español", level: "Nativo" },
-    { name: "Inglés", level: "Avanzado (C1)" },
-    { name: "Francés", level: "Básico (A2)" }
+    { name: "Inglés", level: "Intermedio Alto (B2)" }
   ]
 };
 

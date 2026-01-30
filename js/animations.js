@@ -9,9 +9,18 @@ const observerOptions = {
 };
 
 const animateOnScroll = () => {
+  // Track already animated elements globally
+  const animatedElements = new Set();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      // Verificar con Set y atributo para máxima seguridad
+      if (entry.isIntersecting && !animatedElements.has(entry.target) && !entry.target.hasAttribute('data-animated')) {
+        // Marcar como animado INMEDIATAMENTE
+        animatedElements.add(entry.target);
+        entry.target.setAttribute('data-animated', 'true');
+
+        // Aplicar animación
         entry.target.classList.add('fade-in');
 
         // Animate progress bars when in view
@@ -20,19 +29,27 @@ const animateOnScroll = () => {
           entry.target.style.width = width + '%';
         }
 
-        // Unobserve after animation
+        // Unobserve inmediatamente
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observe all elements with animation classes
-  const animatedElements = document.querySelectorAll('.card, .timeline-item, .skill-item, .stat-card');
-  animatedElements.forEach(el => observer.observe(el));
+  // Observe all elements
+  const elementsToAnimate = document.querySelectorAll('.card, .skill-item, .stat-card');
+  elementsToAnimate.forEach(el => {
+    if (!el.hasAttribute('data-animated')) {
+      observer.observe(el);
+    }
+  });
 
   // Observe progress bars
   const progressBars = document.querySelectorAll('.progress-fill');
-  progressBars.forEach(bar => observer.observe(bar));
+  progressBars.forEach(bar => {
+    if (!bar.hasAttribute('data-animated')) {
+      observer.observe(bar);
+    }
+  });
 };
 
 // Parallax effect for hero section
@@ -220,7 +237,7 @@ const animateSkillBars = () => {
 const initAnimations = () => {
   animateOnScroll();
   smoothScrollLinks();
-  staggerAnimation('.card', 100);
+  // staggerAnimation('.card', 100); // DESACTIVADO - causa doble animación
   initCounters();
   timelineAnimation();
   animateSkillBars();
