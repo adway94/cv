@@ -246,45 +246,96 @@ const populateAchievements = () => {
 // Challenges
 const populateChallenges = () => {
   const { challenges } = cvData;
-  const challengesGrid = document.querySelector('.challenges .grid');
+  const carouselTrack = document.querySelector('.carousel-track');
+  const carouselIndicators = document.querySelector('.carousel-indicators');
 
-  if (!challengesGrid) return;
+  if (!carouselTrack || !carouselIndicators) return;
 
-  challengesGrid.innerHTML = challenges.map(challenge => `
-    <div class="card challenge-card">
-      <h3 class="card-title">${challenge.title}</h3>
+  // Populate carousel items
+  carouselTrack.innerHTML = challenges.map((challenge, index) => `
+    <div class="carousel-item ${index === 0 ? 'active' : ''}">
+      <div class="card challenge-card">
+        <h3 class="card-title">${challenge.title}</h3>
 
-      <div class="challenge-problem">
-        <div class="challenge-problem-title">
-          <i class="fas fa-exclamation-circle"></i>
-          <span>Problema</span>
+        <div class="challenge-problem">
+          <div class="challenge-problem-title">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>Problema</span>
+          </div>
+          <p>${challenge.problem}</p>
         </div>
-        <p>${challenge.problem}</p>
-      </div>
 
-      <div class="challenge-action">
-        <div class="challenge-action-title">
-          <i class="fas fa-tools"></i>
-          <span>Acción</span>
+        <div class="challenge-action">
+          <div class="challenge-action-title">
+            <i class="fas fa-tools"></i>
+            <span>Acción</span>
+          </div>
+          <p>${challenge.action}</p>
         </div>
-        <p>${challenge.action}</p>
-      </div>
 
-      <div class="challenge-result">
-        <div class="challenge-result-title">
-          <i class="fas fa-check-circle"></i>
-          <span>Resultado</span>
+        <div class="challenge-result">
+          <div class="challenge-result-title">
+            <i class="fas fa-check-circle"></i>
+            <span>Resultado</span>
+          </div>
+          <p>${challenge.result}</p>
         </div>
-        <p>${challenge.result}</p>
-      </div>
 
-      <div class="challenge-tags">
-        <div class="tag-list">
-          ${challenge.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        <div class="challenge-tags">
+          <div class="tag-list">
+            ${challenge.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
         </div>
       </div>
     </div>
   `).join('');
+
+  // Populate indicators
+  carouselIndicators.innerHTML = challenges.map((_, index) => `
+    <button class="carousel-indicator ${index === 0 ? 'active' : ''}" data-index="${index}"></button>
+  `).join('');
+
+  // Initialize carousel functionality
+  initCarousel();
+};
+
+// Carousel functionality
+const initCarousel = () => {
+  let currentIndex = 0;
+  const items = document.querySelectorAll('.carousel-item');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  const prevBtn = document.querySelector('.carousel-btn-prev');
+  const nextBtn = document.querySelector('.carousel-btn-next');
+
+  const showSlide = (index) => {
+    items.forEach((item, i) => {
+      item.classList.toggle('active', i === index);
+    });
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  };
+
+  const nextSlide = () => {
+    const nextIndex = (currentIndex + 1) % items.length;
+    showSlide(nextIndex);
+  };
+
+  const prevSlide = () => {
+    const prevIndex = (currentIndex - 1 + items.length) % items.length;
+    showSlide(prevIndex);
+  };
+
+  nextBtn?.addEventListener('click', nextSlide);
+  prevBtn?.addEventListener('click', prevSlide);
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => showSlide(index));
+  });
+
+  // Auto-advance carousel every 8 seconds
+  setInterval(nextSlide, 8000);
 };
 
 // Projects
@@ -321,18 +372,12 @@ const populateSkills = () => {
 
   skillsGrid.innerHTML = Object.keys(skills).map(category => `
     <div class="skill-category">
-      <h3 class="skill-category-title">${category.charAt(0).toUpperCase() + category.slice(1)}</h3>
-      ${skills[category].map(skill => `
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">${skill.name}</span>
-            <span class="skill-level">${skill.level}%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" data-width="${skill.level}"></div>
-          </div>
-        </div>
-      `).join('')}
+      <h3 class="skill-category-title">${category}</h3>
+      <div class="skill-tags">
+        ${skills[category].map(tech => `
+          <span class="skill-tag">${tech}</span>
+        `).join('')}
+      </div>
     </div>
   `).join('');
 };

@@ -108,59 +108,56 @@ const cvData = {
   // Achievements / Logros Destacados
   achievements: [
     {
-      icon: "🚀",
-      title: "Rendimiento +60%",
-      description: "Optimización de aplicación que resultó en 60% de mejora en velocidad de carga"
+      icon: "📱",
+      title: "Ownership de Productos Cross-Platform",
+      description: "Responsabilidad completa sobre productos multi-plataforma, desde diseño hasta deployment"
     },
     {
-      icon: "👥",
-      title: "Líder de Equipo",
-      description: "Liderazgo exitoso de equipo de 5 personas en proyecto crítico"
+      icon: "📊",
+      title: "Sistema de Facturación: 50% → 99%",
+      description: "Optimización crítica que llevó la tasa de éxito de facturación del 50% al 99%"
     },
     {
-      icon: "⏱️",
-      title: "Ahorro de Tiempo",
-      description: "Automatización de procesos que ahorró 20 horas/semana al equipo"
+      icon: "🔧",
+      title: "Refactorización de Proyectos Legacy",
+      description: "Implementación y refactorización exitosa de proyectos legacy mejorando mantenibilidad"
     },
     {
-      icon: "🏆",
-      title: "Hackathon Winner",
-      description: "Primer lugar en hackathon interno con solución de IA"
-    },
-    {
-      icon: "💡",
-      title: "Innovación",
-      description: "Patente de solución innovadora para optimización de base de datos"
-    },
-    {
-      icon: "📈",
-      title: "Crecimiento",
-      description: "Contribuí al crecimiento de usuarios de 1K a 100K en 6 meses"
+      icon: "🔌",
+      title: "Integración End-to-End de Proveedores",
+      description: "Integración completa de múltiples proveedores externos, gestión de APIs y flujos complejos"
     }
   ],
 
   // Challenges & Solutions (Casos STAR)
   challenges: [
     {
-      title: "Crisis de Rendimiento en Producción",
-      problem: "La aplicación se caía constantemente con picos de tráfico. Los usuarios reportaban timeouts y la tasa de rebote aumentó al 70%.",
-      action: "Implementé sistema de caché con Redis, optimicé queries SQL (agregué índices), configuré load balancer y implementé lazy loading en el frontend. También añadí monitoring con Datadog.",
-      result: "Reducción del 95% en errores de servidor, tiempo de respuesta de 3.5s a 400ms, y tasa de rebote bajó al 15%. La app ahora soporta 10x más tráfico concurrente.",
-      tags: ["Redis", "SQL", "Performance", "Monitoring", "Load Balancing"]
+      title: "Bug Crítico en Sistema de Prevención de Lavado de Dinero",
+      problem: "Un bug introducido en una query SQL causó que el sistema anti-lavado de dinero generara alertas redundantes, colapsando el sistema de cumplimiento. El área de compliance quedó paralizada y el riesgo regulatorio era crítico.",
+      action: "Realicé inspección profunda usando sistemas de tracking y logs. Identifiqué la query SQL problemática que generaba duplicados. Debuggeé el código, corregí la lógica de la consulta y validé con el equipo de compliance que las alertas volvieran a ser precisas.",
+      result: "Sistema restaurado el mismo día. Eliminé 100% de las alertas redundantes. Implementé tests específicos para prevenir regresiones. El equipo de compliance recuperó la operatividad normal sin impacto regulatorio.",
+      tags: ["SQL", "Debugging", "Crisis Management", "Compliance", "Production Fix"]
     },
     {
-      title: "Bug Crítico en Sistema de Pagos",
-      problem: "Error en producción causó que 200+ transacciones se procesaran dos veces, resultando en cargos duplicados a clientes. Potencial pérdida de confianza y problemas legales.",
-      action: "Primero, pausé el sistema de pagos temporalmente. Identifiqué el problema (falta de idempotencia en API). Implementé solución con transaction IDs únicos y verificación de duplicados. Coordiné con equipo de finanzas para reembolsos automáticos.",
-      result: "Todos los clientes afectados recibieron reembolsos automáticos en 24h. Implementé tests de integración específicos para prevenir recurrencia. Cero incidentes similares en 2 años posteriores. Aprendí la importancia de idempotencia en sistemas críticos.",
-      tags: ["Bug Fix", "Payments", "Idempotency", "Crisis Management", "Testing"]
+      title: "Propuesta de Arquitectura Técnica con Experiencia Limitada",
+      problem: "El equipo necesitaba definir el stack tecnológico y arquitectura de infraestructura para un nuevo proyecto crítico. A pesar de ser relativamente nuevo en el equipo, identifiqué una oportunidad de aportar valor basándome en investigación y mejores prácticas.",
+      action: "Investigué exhaustivamente opciones de tecnologías y arquitecturas. Preparé una propuesta técnica detallada con pros/contras, escalabilidad y mantenibilidad. Presenté al equipo senior con justificaciones claras basadas en requerimientos del proyecto.",
+      result: "La propuesta fue adoptada por el equipo. El proyecto se desarrolló exitosamente con el stack propuesto. Gané credibilidad técnica y confianza del equipo senior, demostrando que la antigüedad no limita el valor de las contribuciones.",
+      tags: ["Arquitectura", "Liderazgo Técnico", "Iniciativa", "Infraestructura", "Comunicación"]
     },
     {
-      title: "Migración de Base de Datos Sin Downtime",
-      problem: "Necesitábamos migrar de MySQL a PostgreSQL en aplicación con 50K usuarios activos diarios. Cero tolerancia a downtime según SLA.",
-      action: "Diseñé estrategia de migración en 4 fases: 1) Dual-write a ambas DBs, 2) Migración gradual de lecturas, 3) Validación de consistencia de datos, 4) Switch completo. Implementé feature flags para rollback rápido si era necesario.",
-      result: "Migración exitosa con cero downtime. Mejora del 35% en velocidad de queries complejas. El proyecto se completó 1 semana antes de lo planeado. La estrategia se convirtió en template para futuras migraciones.",
-      tags: ["Database", "Migration", "PostgreSQL", "Zero Downtime", "Architecture"]
+      title: "Innovación en Code Review: Claude Code + GitLab",
+      problem: "Los Merge Requests del equipo carecían de contexto suficiente, dificultando el code review. Los reviewers perdían tiempo entendiendo el 'por qué' de los cambios, ralentizando el flujo de desarrollo.",
+      action: "Propuse usar Claude Code para generar descripciones de MR contextualizadas y detalladas. Implementé un flujo donde Claude analiza el diff completo y genera descripciones que explican motivación, cambios técnicos e impacto. Evangelicé la práctica con demos al equipo.",
+      result: "El equipo adoptó la práctica como estándar. Tiempo de review reducido significativamente. Los MRs pasaron de descripciones vagas a documentación clara y estructurada. Mejoró la calidad del code review y la transferencia de conocimiento en el equipo.",
+      tags: ["AI Tools", "Developer Experience", "Code Review", "GitLab", "Process Innovation"]
+    },
+    {
+      title: "Migración y Optimización de Sistema de Facturación Legacy",
+      problem: "El sistema de facturación crítico estaba en Python 2.x (EOL), con tasa de éxito del 50% en emisión de facturas. Código legacy frágil, sin tests, y bloqueando actualizaciones de seguridad. El negocio perdía ingresos por facturas fallidas.",
+      action: "Lideré migración completa de Python 2.x a 3.9. Refactoricé lógica de negocio identificando bugs críticos en el proceso. Implementé manejo robusto de errores, reintentos automáticos y logging detallado. Agregué suite de tests para garantizar estabilidad.",
+      result: "Sistema migrado exitosamente con tasa de éxito del 99% (mejora de 49 puntos porcentuales). Eliminé deuda técnica crítica. Reduje tickets de soporte relacionados con facturación. El negocio recuperó ingresos previamente perdidos por fallas.",
+      tags: ["Python", "Legacy Code", "Migration", "Refactoring", "Business Impact"]
     }
   ],
 
@@ -192,32 +189,15 @@ const cvData = {
     }
   ],
 
-  // Skills
+  // Skills / Tecnologías
   skills: {
-    frontend: [
-      { name: "JavaScript/ES6+", level: 95 },
-      { name: "React.js", level: 90 },
-      { name: "Vue.js", level: 85 },
-      { name: "HTML5/CSS3", level: 95 },
-      { name: "TypeScript", level: 80 },
-      { name: "Tailwind CSS", level: 85 }
-    ],
-    backend: [
-      { name: "Node.js", level: 90 },
-      { name: "Express.js", level: 90 },
-      { name: "Python", level: 75 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "MongoDB", level: 85 },
-      { name: "REST APIs", level: 95 }
-    ],
-    tools: [
-      { name: "Git/GitHub", level: 95 },
-      { name: "Docker", level: 80 },
-      { name: "AWS", level: 75 },
-      { name: "CI/CD", level: 80 },
-      { name: "Jest/Testing", level: 85 },
-      { name: "Agile/Scrum", level: 90 }
-    ]
+    "Lenguajes": ["Python", "JavaScript", "TypeScript", "SQL", "HTML5", "CSS3"],
+    "Frontend": ["React.js", "Django Templates", "Tailwind CSS", "Bootstrap"],
+    "Backend": ["Django", "FastAPI", "Flask", "Node.js", "REST APIs"],
+    "Bases de Datos": ["PostgreSQL", "MySQL", "Redis"],
+    "DevOps & Tools": ["Docker", "Git/GitHub", "GitLab", "CI/CD", "Linux"],
+    "Automatización & AI": ["N8N", "Claude Code"],
+    "Metodologías": ["Agile/Scrum", "Code Review", "Testing"]
   },
 
   // Education

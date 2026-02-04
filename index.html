@@ -36,8 +36,6 @@
   <!-- Header / Navigation -->
   <header class="header">
     <nav class="nav">
-      <a href="#home" class="nav-logo">TN</a>
-
       <ul class="nav-menu">
         <li><a href="#home" class="nav-link active">Inicio</a></li>
         <li><a href="#about" class="nav-link">Sobre Mí</a></li>
@@ -46,6 +44,9 @@
         <li><a href="#challenges" class="nav-link">Desafíos</a></li>
         <!-- <li><a href="#projects" class="nav-link">Proyectos</a></li> -->
         <li><a href="#skills" class="nav-link">Habilidades</a></li>
+        <li><a href="#education" class="nav-link">Educación</a></li>
+        <li><a href="#certifications" class="nav-link">Certificaciones</a></li>
+        <li><a href="#languages" class="nav-link">Idiomas</a></li>
         <li><a href="#contact" class="nav-link">Contacto</a></li>
       </ul>
 
@@ -118,7 +119,20 @@
     <div class="container">
       <h2 class="section-title">Desafíos & Soluciones</h2>
       <p class="section-subtitle">Casos de éxito y lecciones aprendidas</p>
-      <div class="grid grid-2">
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-btn-prev" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel-wrapper">
+          <div class="carousel-track">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+        <button class="carousel-btn carousel-btn-next" aria-label="Siguiente">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="carousel-indicators">
         <!-- Populated by JavaScript -->
       </div>
     </div>
@@ -139,8 +153,8 @@
   <!-- Skills Section -->
   <section class="section skills" id="skills">
     <div class="container">
-      <h2 class="section-title">Habilidades Técnicas</h2>
-      <p class="section-subtitle">Tecnologías y herramientas que domino</p>
+      <h2 class="section-title">Tecnologías</h2>
+      <p class="section-subtitle">Stack tecnológico y herramientas</p>
       <div class="skills-grid">
         <!-- Populated by JavaScript -->
       </div>
