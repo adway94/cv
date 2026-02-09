@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CV Digital Profesional - Desarrollador Full Stack">
-  <meta name="keywords" content="desarrollador, full stack, CV, portfolio, programador">
-  <meta name="author" content="Tu Nombre">
+  <meta name="description" content="Alejandro Machulsky - Software Developer | Python, Django, React, Docker">
+  <meta name="keywords" content="desarrollador, software developer, python, django, react, CV, portfolio">
+  <meta name="author" content="Alejandro Machulsky">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Tu Nombre - CV Digital">
-  <meta property="og:description" content="Desarrollador Full Stack con experiencia en JavaScript, React y Node.js">
+  <meta property="og:title" content="Alejandro Machulsky - Software Developer">
+  <meta property="og:description" content="Software Developer | Python, Django, React, Docker | Transformando ideas en soluciones reales">
   <meta property="og:image" content="assets/images/profile.jpg">
 
-  <title>Tu Nombre - CV Digital</title>
+  <title>Alejandro Machulsky - Software Developer</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
@@ -59,16 +59,19 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <img src="assets/images/profile.jpg" alt="Profile Photo" class="hero-image" onerror="this.src='https://via.placeholder.com/180'">
+      <div class="hero-image-wrapper">
+        <img src="assets/images/profile.jpg" alt="Profile Photo" class="hero-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hero-image-fallback" style="display:none;">AM</div>
+      </div>
       <h1 class="hero-title">Tu Nombre</h1>
       <p class="hero-subtitle">Desarrollador Full Stack</p>
       <p class="hero-tagline"><!-- Populated by JavaScript --></p>
       <div class="hero-buttons">
         <a href="#contact" class="btn btn-primary">
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-paper-plane"></i>
           Contáctame
         </a>
-        <a href="assets/cv.pdf" target="_blank" class="btn btn-outline" onclick="downloadCV(); return false;">
+        <a href="assets/cv_es.pdf" class="btn btn-outline hero-cv-btn" target="_blank">
           <i class="fas fa-download"></i>
           Descargar CV
         </a>
@@ -204,20 +207,24 @@
   <section class="section contact" id="contact">
     <div class="container">
       <h2 class="section-title">Contacto</h2>
-      <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+      <p class="section-subtitle">¿Tienes un proyecto en mente? Conectemos.</p>
       <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span class="contact-email">tu.email@ejemplo.com</span>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span class="contact-phone">+34 123 456 789</span>
-          </div>
+        <div class="contact-cta">
+          <p class="contact-message">La mejor forma de contactarme es a través de LinkedIn. Respondo todos los mensajes.</p>
+          <a href="" class="contact-linkedin-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+            <span>Envíame un mensaje en LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="contact-details">
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span class="contact-location">Madrid, España</span>
+            <span class="contact-location">Argentina</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-briefcase"></i>
+            <span>Disponible para oportunidades remotas</span>
           </div>
         </div>
 
@@ -233,7 +240,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
+      <p>&copy; 2025 Alejandro Machulsky. Todos los derechos reservados.</p>
       <p>Desarrollado con <i class="fas fa-heart" style="color: #ef4444;"></i> usando HTML, CSS y JavaScript</p>
       <div class="footer-links">
         <a href="#home" class="footer-link">Inicio</a>

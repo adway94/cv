@@ -95,6 +95,10 @@
   padding: 0 var(--space-lg);
 }
 
+.hero-image-wrapper {
+  margin: 0 auto var(--space-xl);
+}
+
 .hero-image {
   width: 180px;
   height: 180px;
@@ -102,7 +106,24 @@
   object-fit: cover;
   border: 6px solid white;
   box-shadow: var(--shadow-2xl);
-  margin: 0 auto var(--space-xl);
+}
+
+.hero-image-fallback {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: var(--shadow-2xl);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  color: white;
+  letter-spacing: 2px;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -397,11 +418,47 @@
   text-align: center;
 }
 
-.contact-info {
+.contact-cta {
+  margin-bottom: var(--space-2xl);
+}
+
+.contact-message {
+  font-size: var(--fs-lg);
+  opacity: 0.9;
+  margin-bottom: var(--space-xl);
+  line-height: 1.6;
+}
+
+.contact-linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: white;
+  color: var(--color-primary);
+  padding: var(--space-md) var(--space-2xl);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-linkedin-btn i {
+  font-size: var(--fs-2xl);
+}
+
+.contact-linkedin-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  background-color: #f0f0f0;
+}
+
+.contact-details {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-2xl);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
 .contact-item {
@@ -409,17 +466,18 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-md);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-md);
+  opacity: 0.9;
 }
 
 .contact-item i {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-lg);
 }
 
 .contact-social {
   display: flex;
   justify-content: center;
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-xl);
 }
 
 .contact-social .social-link {
@@ -590,7 +648,8 @@
     font-size: var(--fs-3xl);
   }
 
-  .hero-image {
+  .hero-image,
+  .hero-image-fallback {
     width: 150px;
     height: 150px;
   }

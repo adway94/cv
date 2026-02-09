@@ -168,13 +168,30 @@ const populatePersonalInfo = () => {
   }
 
   // Update contact section
-  const contactEmail = document.querySelector('.contact-email');
-  const contactPhone = document.querySelector('.contact-phone');
   const contactLocation = document.querySelector('.contact-location');
-
-  if (contactEmail) contactEmail.textContent = personal.email || 'Contactar vía LinkedIn';
-  if (contactPhone) contactPhone.textContent = personal.phone || '';
   if (contactLocation) contactLocation.textContent = personal.location;
+
+  // Set LinkedIn CTA button (contact section)
+  const linkedinBtn = document.querySelector('.contact-linkedin-btn');
+  if (linkedinBtn && cvData.social.linkedin) {
+    linkedinBtn.href = cvData.social.linkedin;
+  }
+
+  // CV download button - fallback to LinkedIn if no PDF
+  const cvBtn = document.querySelector('.hero-cv-btn');
+  if (cvBtn) {
+    fetch('assets/cv_es.pdf', { method: 'HEAD' }).then(res => {
+      if (!res.ok) {
+        cvBtn.href = cvData.social.linkedin || '#contact';
+        cvBtn.querySelector('i').className = 'fab fa-linkedin';
+        cvBtn.querySelector('i').nextSibling.textContent = ' Ver CV en LinkedIn';
+      }
+    }).catch(() => {
+      cvBtn.href = cvData.social.linkedin || '#contact';
+      cvBtn.querySelector('i').className = 'fab fa-linkedin';
+      cvBtn.querySelector('i').nextSibling.textContent = ' Ver CV en LinkedIn';
+    });
+  }
 };
 
 // Social Links
@@ -482,7 +499,7 @@ const populateLanguages = () => {
 
 // Download CV as PDF
 const downloadCV = () => {
-  window.open('assets/cv.pdf', '_blank');
+  window.open('assets/cv_es.pdf', '_blank');
 };
 
 // Print CV
